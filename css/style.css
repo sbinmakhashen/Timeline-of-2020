@@ -57,19 +57,18 @@ padding: 1rem 2rem;
   height: 100%;
   padding: 30px;
   transition: all var(--speed) ease-in-out;
+  border-radius: 15px;
 }
 
 /* Make boxes go right and left */
 /* Right side */
 #timeline-events ul li:nth-child(even) div {
-  left: 40px;
-  border-radius: 19px 50% 50% 19px;
+  right: -50px;
 }
 
 /* Left side */
 #timeline-events ul li:nth-child(odd) div{
-  left: -430px;
-  border-radius: 19px 50% 50% 19px;
+  left: -440px;
 }
 
 /* Creating the dots */
@@ -83,4 +82,28 @@ padding: 1rem 2rem;
   padding: 14px;
   transform: translateX(-50%);
   transition: all var(--speed) ease-in-out;
+}
+
+/* Creating arrows on the side of the boxes */
+#timeline-events ul li div::before {
+  content: '';
+  position: absolute;
+  bottom: 68px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+} 
+
+/* Right arrow */
+#timeline-events ul li:nth-child(even) div::before {
+  right: 400px; 
+  border-width: 10px 20px;
+  border-color: transparent var(--primary-color) transparent transparent;
+}
+
+/* Left side arrow */
+#timeline-events ul li:nth-child(odd) div::before {
+  left: 400px; 
+  border-width: 10px 20px;
+  border-color: transparent transparent transparent var(--primary-color);
 }
