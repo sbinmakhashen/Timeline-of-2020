@@ -107,3 +107,43 @@ padding: 1rem 2rem;
   border-width: 10px 20px;
   border-color: transparent transparent transparent var(--primary-color);
 }
+
+@media(max-width: 920px) {
+  /* Moving boxes */
+  #timeline-events ul li div {
+    width: 270px;
+  }
+  /* Fix left boxes */
+  #timeline-events ul li:nth-child(odd) div {
+    left: -310px;
+  }
+  /* Left arrow */
+  #timeline-events ul li:nth-child(odd) div::before {
+    left: 270px;
+  }
+  /* right arrow */
+  #timeline-events ul li:nth-child(even) div::before {
+    right: 270px;
+  }
+  /* Positioning the arrows */
+  #timeline-events ul li div::before {
+    bottom: 80px;
+  }
+}
+
+/* Smaller Screens */
+@media(max-width: 650px) {
+  /* Moving the line */
+  #timeline-events ul li{
+    margin: 0 18px;
+  }
+  /* Adjusting the left boxes */
+  #timeline-events ul li:nth-child(odd) div {
+    left: 50px;
+  }
+  /* Moving left side arrows to the right */
+  #timeline-events ul li:nth-child(odd) div::before {
+    left: -40px;
+    border-color: transparent var(--primary-color) transparent transparent;
+  }
+}
