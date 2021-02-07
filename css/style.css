@@ -55,8 +55,32 @@ padding: 1rem 2rem;
   background: var(--primary-color);
   width: 400px;
   height: 100%;
-  padding: 18px;
+  padding: 30px;
   transition: all var(--speed) ease-in-out;
 }
 
-/* Make boxes go right and other boxes left */
+/* Make boxes go right and left */
+/* Right side */
+#timeline-events ul li:nth-child(even) div {
+  left: 40px;
+  border-radius: 19px 50% 50% 19px;
+}
+
+/* Left side */
+#timeline-events ul li:nth-child(odd) div{
+  left: -430px;
+  border-radius: 19px 50% 50% 19px;
+}
+
+/* Creating the dots */
+#timeline-events ul li::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  background: var(--primary-color);
+  border-radius: 50%;
+  padding: 14px;
+  transform: translateX(-50%);
+  transition: all var(--speed) ease-in-out;
+}
